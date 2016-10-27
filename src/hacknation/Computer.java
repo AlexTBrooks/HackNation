@@ -21,14 +21,14 @@ public class Computer {
     private Directory currentDir;
     private HashMap<String, Integer> openPorts;
     
-    //comment2.0
+    
     public Computer(String user,String password,String IP,String DNSname){
         this.user = user;
         this.password = password;
         this.IP = IP;
         this.DNSname = DNSname;
     }
-    //ndnofnnodfa
+    
     public HashMap<String,Integer> getOpenPorts(){
         return openPorts;
     }

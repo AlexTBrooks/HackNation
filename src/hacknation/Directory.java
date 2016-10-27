@@ -7,7 +7,7 @@ package hacknation;
 
 /**
  *
- * @author main
+ * @author Trevor
  */
 public class Directory extends Object {
     protected String name;
