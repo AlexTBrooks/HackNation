@@ -21,6 +21,7 @@ public class Computer {
     private Directory currentDir;
     private HashMap<String, Integer> openPorts;
     
+    //comment
     public Computer(String user,String password,String IP,String DNSname){
         this.user = user;
         this.password = password;
