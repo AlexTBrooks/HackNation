@@ -13,6 +13,7 @@ public class Directory extends Object {
     protected String name;
     private final String type;
     
+    //comment
     public Directory(String n, String t) {
         super();
         this.name = n;
