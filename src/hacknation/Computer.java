@@ -34,7 +34,7 @@ public class Computer {
         fileTree.addChild(new Folder(this.fileTree, "recycling"));
         fileTree.addChild(new Folder(this.fileTree, "temp"));
         //add second layer in home folder
-        
+        //DICK DICK DICK DICK DICK DICK DICK I LITERALLY CANNOT STOP SUCKING DICK
         this.openPorts = new HashMap<String, Integer>();
         openPorts.put("SSH", 22);
         openPorts.put("HTTP", 80);
