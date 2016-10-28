@@ -27,10 +27,30 @@ public class Computer {
         this.password = password;
         this.IP = IP;
         this.DNSname = DNSname;
+        
+        this.fileTree = new Folder(null, "root");
+        fileTree.addChild(new Folder(this.fileTree, "home"));
+        fileTree.addChild(new Folder(this.fileTree, "bin"));
+        fileTree.addChild(new Folder(this.fileTree, "recycling"));
+        fileTree.addChild(new Folder(this.fileTree, "temp"));
+        //add second layer in home folder
+        
+        this.openPorts = new HashMap<String, Integer>();
+        openPorts.put("SSH", 22);
+        openPorts.put("HTTP", 80);
+        openPorts.put("HTTPS", 443);
+        openPorts.put("DNS", 53);
+        openPorts.put("SMTP", 25);
+        openPorts.put("SMTPS", 465);
+        openPorts.put("IMAP", 143);
+        openPorts.put("IMAPS", 993);
+        openPorts.put("LDAP", 389);
+        openPorts.put("MYSQL", 3306);
+        openPorts.put("NFS", 2049);
     }
     
     public HashMap<String,Integer> getOpenPorts(){
-        return openPorts;
+        return this.openPorts;
     }
     
     
