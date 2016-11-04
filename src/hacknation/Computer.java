@@ -41,7 +41,7 @@ public class Computer {
         home.addChild(new Folder(this.fileTree, "Downloads"));
         home.addChild(new Folder(this.fileTree, "Pictures"));
         home.addChild(new Folder(this.fileTree, "Videos"));
-        
+
         this.openPorts = new HashMap<String, Integer>();
         this.openPorts.put("SSH", 22);
         this.openPorts.put("HTTP", 80);
