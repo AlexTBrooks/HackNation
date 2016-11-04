@@ -6,6 +6,7 @@
 package hacknation;
 
 import java.util.HashMap;
+import java.util.List;
 
 /**
  *
@@ -29,24 +30,30 @@ public class Computer {
         this.DNSname = DNSname;
         
         this.fileTree = new Folder(null, "root");
-        fileTree.addChild(new Folder(this.fileTree, "home"));
-        fileTree.addChild(new Folder(this.fileTree, "bin"));
-        fileTree.addChild(new Folder(this.fileTree, "recycling"));
-        fileTree.addChild(new Folder(this.fileTree, "temp"));
-        //add second layer in home folder
+        this.fileTree.addChild(new Folder(this.fileTree, "home"));
+        this.fileTree.addChild(new Folder(this.fileTree, "bin"));
+        this.fileTree.addChild(new Folder(this.fileTree, "recycling"));
+        this.fileTree.addChild(new Folder(this.fileTree, "temp"));
+        
+        Folder home = (Folder)fileTree.getChildren().get(0);
+        home.addChild(new Folder(this.fileTree, "Desktop"));
+        home.addChild(new Folder(this.fileTree, "Documents"));
+        home.addChild(new Folder(this.fileTree, "Downloads"));
+        home.addChild(new Folder(this.fileTree, "Pictures"));
+        home.addChild(new Folder(this.fileTree, "Videos"));
         
         this.openPorts = new HashMap<String, Integer>();
-        openPorts.put("SSH", 22);
-        openPorts.put("HTTP", 80);
-        openPorts.put("HTTPS", 443);
-        openPorts.put("DNS", 53);
-        openPorts.put("SMTP", 25);
-        openPorts.put("SMTPS", 465);
-        openPorts.put("IMAP", 143);
-        openPorts.put("IMAPS", 993);
-        openPorts.put("LDAP", 389);
-        openPorts.put("MYSQL", 3306);
-        openPorts.put("NFS", 2049);
+        this.openPorts.put("SSH", 22);
+        this.openPorts.put("HTTP", 80);
+        this.openPorts.put("HTTPS", 443);
+        this.openPorts.put("DNS", 53);
+        this.openPorts.put("SMTP", 25);
+        this.openPorts.put("SMTPS", 465);
+        this.openPorts.put("IMAP", 143);
+        this.openPorts.put("IMAPS", 993);
+        this.openPorts.put("LDAP", 389);
+        this.openPorts.put("MYSQL", 3306);
+        this.openPorts.put("NFS", 2049);
     }
     
     public HashMap<String,Integer> getOpenPorts(){

@@ -11,10 +11,12 @@ import java.util.StringTokenizer;
  *
  * @author main
  */
-public class File extends Directory{
+public class File extends Directory {
+    private String path;
     private int fileSize;
     private String fileName;
     private String data;
+    private Folder parent;
     
     public File(int fileSize, String name, String data)
     {
@@ -27,6 +29,11 @@ public class File extends Directory{
     public String getFileName()
     {
         return this.fileName;
+    }
+    
+    public final String setFilePath() {
+        String path = this.parent.getFolderPath();
+        return path + this.fileName;
     }
     
     public String getFileExtension()
@@ -47,4 +54,11 @@ public class File extends Directory{
     {
         return this.data;
     }
+    
+    public boolean is(String path){
+        if (path == null) return false;
+        if (!(path instanceof String)) return false;
+        return path.equals(this.path);
+    }
+    
 }
